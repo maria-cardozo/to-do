@@ -1,0 +1,86 @@
+.main{
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    background-color: #f4f4f4;
+}
+
+.container_card{
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    border-radius: 7px;
+    padding: 24px;
+
+}
+
+.to_do{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: none;
+    height: 50px;
+    /* background-color: #fff; */
+    font-size: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+form input{
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+form select{
+    width: 120px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+form button{
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 7px;
+}
+
+.card-itens{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.card-itens p{
+    margin-top: 10px;
+}
+
+.buttons button{
+    background-color: #fff;
+
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
