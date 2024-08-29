@@ -3,14 +3,26 @@ const cardList = document.getElementById('cards-list')
 const buttonSubmit = document.getElementById('button-submit')
 const select = document.getElementById('select')
 
+{/* 
+    <div class= cardslist>
+    <div class="card-itens">
+                <p>Tarefa tal de tal</p>
+                <div class="buttons">
+                    <button><i class='bx bx-pencil'></i></button>
+                    <button><i class='bx bx-trash' ></i></button>
+                    <button><i class='bx bx-check' ></i></button>
+                </div>
 
-buttonSubmit.addEventListener('click',(e)=>{
-    e.preventDefault()
+            </div> */}
+
+buttonSubmit.addEventListener('click',(event)=>{
+    event.preventDefault()
     if (inputText.value === ''){
         alert("Escreva sua tarefa");
     }
     else{
         let cardItens = document.createElement('div')
+        cardItens.classList.add('card-itens');
         if(select.value === "alta"){
             cardItens.style.border = '1px solid red'
         }
@@ -23,7 +35,7 @@ buttonSubmit.addEventListener('click',(e)=>{
         let buttons = document.createElement('div')
         buttons.classList.add('buttons')
         let btnEdit = document.createElement('button')
-        let btnDelet = document.createElement('button')
+        let btnDelete = document.createElement('button')
         let btnDone = document.createElement('button')
         
         let iconEdit = document.createElement('i')
@@ -32,19 +44,21 @@ buttonSubmit.addEventListener('click',(e)=>{
         iconDelet.classList.add('bx', 'bx-trash')
         let iconDone = document.createElement('i')
         iconDone.classList.add('bx' ,'bx-check')
-        buttons.appendChild(btnEdit)
-        buttons.appendChild(btnDelet)
-        buttons.appendChild(btnDone)
-        btnEdit.appendChild(iconEdit)
-        btnDelet.appendChild(iconDelet)
-        btnDone.appendChild(iconDone)
+        buttons.appendChild(btnEdit);
+        buttons.appendChild(btnDelete);
+        buttons.appendChild(btnDone);
+        btnEdit.appendChild(iconEdit);
+        btnDelete.appendChild(iconDelet);
+        btnDone.appendChild(iconDone);
 
-        cardItens.classList.add('card-itens');
-        console.log(cardItens);
+        let texts =document.createElement('div');
+        texts.style.width = '70%'
         let span = document.createElement('span');
         span.innerHTML = inputText.value;
         inputText.value=''
-        cardItens.appendChild(span);
+        texts.appendChild(span);
+          
+        cardItens.appendChild(texts)
         cardItens.appendChild(buttons);
         cardList.appendChild(cardItens);
 
@@ -52,9 +66,11 @@ buttonSubmit.addEventListener('click',(e)=>{
                     
             span.style.display = 'none'
             let input = document.createElement('input')
-            input.style.position='relative'
             input.value = span.textContent
-            cardItens.append(input)
+            input.style.border = 'none'
+            texts.append(input)
+
+
             let btnSave = document.createElement('button')
             let iconSave = document.createElement('i')
             iconSave.classList.add('bx', 'bxs-save')
@@ -68,7 +84,7 @@ buttonSubmit.addEventListener('click',(e)=>{
             })
         })
 
-         btnDelet.addEventListener('click', ()=>{
+         btnDelete.addEventListener('click', ()=>{
             cardItens.remove()
          })
 
